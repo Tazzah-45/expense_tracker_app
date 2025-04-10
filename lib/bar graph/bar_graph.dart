@@ -79,9 +79,9 @@ class MyBarGraph extends StatelessWidget {
 
 Widget getBottomTitles(double value, TitleMeta meta) {
   const style = TextStyle(
-    color: Colors.grey,
+    color: Colors.blueGrey,
     fontWeight: FontWeight.bold,
-    fontSize: 14,
+    fontSize: 12,
   );
   Widget text;
   switch (value.toInt()) {
