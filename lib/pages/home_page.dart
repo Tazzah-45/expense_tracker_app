@@ -33,43 +33,45 @@ class _HomePageState extends State<HomePage> {
       context: context,
      builder: (context) => AlertDialog(
       title: Text( 'Add new expense'),
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          // expense name
-          TextField(
-            controller: newExpenseNameController,
-            decoration: const InputDecoration(
-              hintText: "Expense name",
-            ),
-          ),
-
-          Row(
-            children: [
-            // dollars
-              Expanded(
-                child: TextField(
-                  controller: newExpenseDollarController,
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    hintText: "Dollars",
-                  ),
-                ),
+      content: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            // expense name
+            TextField(
+              controller: newExpenseNameController,
+              decoration: const InputDecoration(
+                hintText: "Expense name",
               ),
-
-            // cents
-            Expanded(
-                child: TextField(
-                  controller: newExpenseCentsController,
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    hintText: "Cents",
+            ),
+        
+            Row(
+              children: [
+              // dollars
+                Expanded(
+                  child: TextField(
+                    controller: newExpenseDollarController,
+                    keyboardType: TextInputType.number,
+                    decoration: const InputDecoration(
+                      hintText: "Dollars",
+                    ),
                   ),
                 ),
-              )
-            ],
-          ),
-        ],
+        
+              // cents
+              Expanded(
+                  child: TextField(
+                    controller: newExpenseCentsController,
+                    keyboardType: TextInputType.number,
+                    decoration: const InputDecoration(
+                      hintText: "Cents",
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ],
+        ),
       ),
       actions: [
         // save button
@@ -105,32 +107,34 @@ class _HomePageState extends State<HomePage> {
     context: context,
     builder: (context) => AlertDialog(
       title: Text('Edit expense'),
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          TextField(
-            controller: newExpenseNameController,
-            decoration: const InputDecoration(hintText: "Expense name"),
-          ),
-          Row(
-            children: [
-              Expanded(
-                child: TextField(
-                  controller: newExpenseDollarController,
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(hintText: "Dollars"),
+      content: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            TextField(
+              controller: newExpenseNameController,
+              decoration: const InputDecoration(hintText: "Expense name"),
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    controller: newExpenseDollarController,
+                    keyboardType: TextInputType.number,
+                    decoration: const InputDecoration(hintText: "Dollars"),
+                  ),
                 ),
-              ),
-              Expanded(
-                child: TextField(
-                  controller: newExpenseCentsController,
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(hintText: "Cents"),
+                Expanded(
+                  child: TextField(
+                    controller: newExpenseCentsController,
+                    keyboardType: TextInputType.number,
+                    decoration: const InputDecoration(hintText: "Cents"),
+                  ),
                 ),
-              ),
-            ],
-          ),
-        ],
+              ],
+            ),
+          ],
+        ),
       ),
       actions: [
         MaterialButton(
